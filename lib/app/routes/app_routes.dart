@@ -6,6 +6,11 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const LOGIN_PAGE = _Paths.LOGIN_PAGE;
   static const MESSAGE_VIEW = _Paths.MESSAGE_VIEW;
+  static const SEARCH_USER = _Paths.SEARCH_USER;
+  static const INVITATION = _Paths.INVITATION;
+  static const PROFILE = _Paths.PROFILE;
+  static const VIDEO_CALLING = _Paths.VIDEO_CALLING;
+  static const AUDIO_CALLING = _Paths.AUDIO_CALLING;
 }
 
 abstract class _Paths {
@@ -13,4 +18,9 @@ abstract class _Paths {
   static const HOME = '/home';
   static const LOGIN_PAGE = '/login-page';
   static const MESSAGE_VIEW = '/message-view';
+  static const SEARCH_USER = '/search-user';
+  static const INVITATION = '/invitation';
+  static const PROFILE = '/profile';
+  static const VIDEO_CALLING = '/video-calling';
+  static const AUDIO_CALLING = '/audio-calling';
 }

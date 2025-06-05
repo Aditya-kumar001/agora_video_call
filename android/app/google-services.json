@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "601212857943",
+    "project_id": "my-ledger-76727",
+    "storage_bucket": "my-ledger-76727.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:601212857943:android:245180e64c9267f042fd12",
+        "android_client_info": {
+          "package_name": "com.example.agora_task"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "601212857943-9da842lui3gjdjmaeov8ed2hiqprskaa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agora_task",
+            "certificate_hash": "150157ca9fbe4114bed1f0d516e508dd19c4c361"
+          }
+        },
+        {
+          "client_id": "601212857943-9hb47hasf4af0ejaibufbip425gca8dp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agora_task",
+            "certificate_hash": "9e370bd974a84fca0b8e4a004aa60068b1442396"
+          }
+        },
+        {
+          "client_id": "601212857943-q3tamrst7ekhqjdcr85gaa84b6aomtlr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq0Fpp2i8Wq4MvFzKS1kmVhsZTpB0Mli4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "601212857943-q3tamrst7ekhqjdcr85gaa84b6aomtlr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "601212857943-9mji8ct4nkglssrgmv52uil34l6ug2dl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.aiChat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

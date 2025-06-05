@@ -1,17 +1,16 @@
-import 'dart:ui';
-
-import 'package:agora_task/app/common/app_color.dart';
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
 
+import '../../../common/app_color.dart';
 import '../../../common/app_fontWeight.dart';
 import '../../../common/app_fontsize.dart';
-import '../../../services/agora_service.dart';
-import '../controllers/message_view_controller.dart';
+import '../controllers/audio_calling_controller.dart';
 
-class MessageViewView extends GetView<MessageViewController> {
-  const MessageViewView({super.key});
-
+class AudioCallingView extends GetView<AudioCallingController> {
+  const AudioCallingView({super.key});
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,6 +43,15 @@ class MessageViewView extends GetView<MessageViewController> {
                               : Image.asset('assets/images/young-men.png', fit: BoxFit.cover),
                         ),
                       ),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+                      Text(
+                        'Calling...',
+                        style: TextStyle(
+                          fontSize: AppFontSize.size1,
+                          fontWeight: AppFontWeight.font3,
+                          color: AppColorList.WhiteText,
+                        ),
+                      ),
                       SizedBox(height: 16),
                       Text(
                         controller.userName.value,
@@ -62,24 +70,26 @@ class MessageViewView extends GetView<MessageViewController> {
                   children: [
                     callButton(
                       context,
-                      icon: Icons.call,
-                      label: "Audio Call",
+                      icon: Icons.volume_up_outlined,
+                      // label: "Audio Call",
                       onTap: () {
-                        controller.joinCall(
-                          token: AgoraService.tempToken, // Replace with real token
-                          isVideo: false, channelName: AgoraService.channelName,
-                        );
+                        
+                      },
+                    ),
+                    callButtonCut(
+                      context,
+                      icon: Icons.phone_disabled,
+                      // label: "Video Call",
+                      onTap: () {
+
                       },
                     ),
                     callButton(
                       context,
-                      icon: Icons.videocam,
-                      label: "Video Call",
+                      icon: Icons.mic_off,
+                      // label: "Video Call",
                       onTap: () {
-                        controller.joinCall(
-                          token: AgoraService.tempToken, // Replace with real token
-                          isVideo: true, channelName: AgoraService.channelName,
-                        );
+                        
                       },
                     ),
                   ],
@@ -92,14 +102,14 @@ class MessageViewView extends GetView<MessageViewController> {
     );
   }
 
-  Widget callButton(BuildContext context, {required IconData icon, required String label, required VoidCallback onTap}) {
+  Widget callButton(BuildContext context, {required IconData icon,required VoidCallback onTap}) {
     return Column(
       children: [
         GestureDetector(
           onTap: onTap,
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.1,
-            width: MediaQuery.of(context).size.width * 0.23,
+            height: MediaQuery.of(context).size.height * 0.08,
+            width: MediaQuery.of(context).size.width * 0.2,
             decoration: BoxDecoration(
               color: AppColorList.MainShadow,
               borderRadius: BorderRadius.circular(50),
@@ -108,14 +118,41 @@ class MessageViewView extends GetView<MessageViewController> {
             child: Icon(icon, color: AppColorList.WhiteText , size: 30),
           ),
         ),
-        SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-        Text(
-          label,
-          style: TextStyle(
-            fontSize: AppFontSize.size2,
-            color: AppColorList.AppBackGroundColor,
+        // SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+        // Text(
+        //   label,
+        //   style: TextStyle(
+        //     fontSize: AppFontSize.size2,
+        //     color: AppColorList.AppBackGroundColor,
+        //   ),
+        // ),
+      ],
+    );
+  }
+  Widget callButtonCut(BuildContext context, {required IconData icon,required VoidCallback onTap}) {
+    return Column(
+      children: [
+        GestureDetector(
+          onTap: onTap,
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.13,
+            width: MediaQuery.of(context).size.width * 0.25,
+            decoration: BoxDecoration(
+              color: AppColorList.MainShadow,
+              borderRadius: BorderRadius.circular(50),
+              border: Border.all(width: 1),
+            ),
+            child: Icon(icon, color: AppColorList.Star3 , size: 50),
           ),
         ),
+        // SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+        // Text(
+        //   label,
+        //   style: TextStyle(
+        //     fontSize: AppFontSize.size2,
+        //     color: AppColorList.AppBackGroundColor,
+        //   ),
+        // ),
       ],
     );
   }
