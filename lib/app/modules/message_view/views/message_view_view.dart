@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:agora_task/app/common/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

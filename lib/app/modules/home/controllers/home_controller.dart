@@ -10,6 +10,7 @@ class HomeController extends GetxController {
   var allUsers = <Map<String, dynamic>>[].obs;
   var acceptedUsers = <Map<String, dynamic>>[].obs;
   var searchResults = <Map<String, dynamic>>[].obs;
+  var searchBar = false.obs;
 
   // Map to track invitation status for each user (uid: status)
   var invitationStatusMap = <String, String>{}.obs;
@@ -20,6 +21,10 @@ class HomeController extends GetxController {
     fetchAllUsers();
     fetchAcceptedUsers();
     fetchAllInvitationsStatus();
+  }
+
+  void searchBarActive(){
+    searchBar.value = !searchBar.value;
   }
 
   void fetchAllUsers() {

@@ -11,6 +11,7 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const VIDEO_CALLING = _Paths.VIDEO_CALLING;
   static const AUDIO_CALLING = _Paths.AUDIO_CALLING;
+  static const INCOMMING_CALL = _Paths.INCOMMING_CALL;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const VIDEO_CALLING = '/video-calling';
   static const AUDIO_CALLING = '/audio-calling';
+  static const INCOMMING_CALL = '/incomming-call';
 }

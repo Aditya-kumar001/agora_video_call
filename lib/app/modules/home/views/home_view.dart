@@ -14,15 +14,18 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar('Messages'),
-      body: Column(
-        children: [
-          // Search Bar
-          searchBar(context, controller),
-          // User List
-          Expanded(
-            child: mainBody(controller),
-          ),
-        ],
+      body: Obx(() =>
+        Column(
+          children: [
+            // Search Bar
+            if (controller.searchBar.value) 
+              searchBar(context, controller),
+            // User List
+            Expanded(
+              child: mainBody(controller),
+            ),
+          ],
+        ),
       ),
     );
   }  

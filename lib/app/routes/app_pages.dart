@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import '../modules/audio_calling/bindings/audio_calling_binding.dart';
 import '../modules/audio_calling/views/audio_calling_view.dart';
 import '../modules/home/bindings/home_binding.dart';
+import '../modules/incomming_call/bindings/incomming_call_binding.dart';
+import '../modules/incomming_call/views/incomming_call_view.dart';
 import '../modules/invitation/bindings/invitation_binding.dart';
 import '../modules/invitation/views/invitation_view.dart';
 import '../modules/login_page/bindings/login_page_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.AUDIO_CALLING,
       page: () => const AudioCallingView(),
       binding: AudioCallingBinding(),
+    ),
+    GetPage(
+      name: _Paths.INCOMMING_CALL,
+      page: () => const IncommingCallView(),
+      binding: IncommingCallBinding(),
     ),
   ];
 }

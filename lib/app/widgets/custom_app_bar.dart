@@ -1,9 +1,10 @@
+import 'package:agora_task/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../routes/app_pages.dart';
 
 AppBar customAppBar(String title) {
+  final controller = Get.find<HomeController>();
     return AppBar(
       title: Text(
         title,
@@ -13,16 +14,17 @@ AppBar customAppBar(String title) {
           ),
       ),
       backgroundColor: Colors.transparent,
+      
       actions: [
-        IconButton(
+        if (title == 'Messages') IconButton(
           onPressed: () { 
-          Get.toNamed(Routes.SEARCH_USER);
+          controller.searchBarActive();
          }, icon: Icon(Icons.search_rounded),)
       ],
-      leading: Icon(
-        Icons.search_rounded,
-        size: 25,  
-      ),
+      // leading: Icon(
+      //   Icons.search_rounded,
+      //   size: 25,  
+      // ),
       // centerTitle: true,
     );
   }
